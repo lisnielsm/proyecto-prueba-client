@@ -1,0 +1,104 @@
+* {
+  margin     : 0;
+  padding    : 0;
+  box-sizing : border-box;
+  font-family: 'Helvetica Neue'
+}
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+.img-avatar {
+  border-radius: 50%;
+  width        : 25px;
+  height       : 25px;
+}
+
+.flex-row {
+  display       : flex;
+  flex-direction: row;
+  width         : 100%;
+}
+
+.flex-column {
+  display       : flex;
+  flex-direction: column;
+  width         : 100%;
+}
+
+.task-text {
+  width: 100%;
+  border     : none !important;
+  font-family: 'Helvetica Neue';
+  resize     : none;
+  margin-left: 5px;
+  caret-color: #3390FF;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.img-icon {
+  width       : 23px;
+  height      : 23px;
+  margin-right: 8px;
+}
+
+.custom-btn {
+  margin          : 5px 1px !important;
+  background-color: transparent;
+  border          : 1px solid #ABB2B9 !important;
+  border-radius   : 5px;
+  padding         : 6px 18px !important;
+}
+
+.custom-btn:hover {
+  background-color: #dbe7e7 !important;
+}
+
+.custom-btn:nth-child(1) {
+  border          : none !important;
+  background-color: #dbe0e6;
+  margin-right    : 30px !important;
+  margin-left     : 8px !important;
+}
+
+.custom-btn:nth-child(1):hover {
+  background-color: #c2c9d3 !important;
+}
+
+
+.cancel-btn {
+  border          : none !important;
+  background-color: #dbe0e6 !important;
+  margin-right    : 3px !important;
+  border-radius   : 5px !important;
+  padding         : 6px 18px !important;
+  font            : bold 12px 'Helvetica Neue', sans-serif !important;
+  height          : 38px !important;
+}
+
+.cancel-btn:hover {
+  background-color: #c2c9d3 !important;
+}
+
+.add-btn {
+  padding: 6px 18px !important;
+  font   : bold 12px 'Helvetica Neue', sans-serif !important;
+}
+
+.btn-text {
+  font       : bold 12px 'Helvetica Neue', sans-serif;
+  display    : inline-flex;
+  align-items: center;
+}
