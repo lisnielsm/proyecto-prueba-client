@@ -37,21 +37,41 @@ code {
   width         : 100%;
 }
 
+.flex-left-centered {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
 .task-text {
-  width: 100%;
+  width      : 100%;
   border     : none !important;
   font-family: 'Helvetica Neue';
   resize     : none;
   margin-left: 5px;
   caret-color: #3390FF;
-  outline: none !important;
-  box-shadow: none !important;
+  outline    : none !important;
+  box-shadow : none !important;
 }
 
 .img-icon {
   width       : 23px;
   height      : 23px;
   margin-right: 8px;
+}
+
+.checkbox {
+  width           : 23px;
+  height          : 23px;
+  margin          : 10px 10px;
+  border          : 1px solid #ABB2B9;
+  border-radius   : 5px;
+  background-color: transparent;
+  cursor          : pointer;
+}
+
+.checkbox:hover {
+  background-color: #ABB2B9;
 }
 
 .custom-btn {
@@ -64,7 +84,7 @@ code {
 
 .avatar-btn {
   background-color: transparent;
-  border: none !important;
+  border          : none !important;
 }
 
 .custom-btn:hover {

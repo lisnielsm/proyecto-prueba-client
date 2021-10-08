@@ -1,7 +1,12 @@
 import React from 'react';
 import addIcon from '../icons/plus-square.svg';
 
-const AddTask = ({setAddTask}) => {
+const AddTask = ({setAddTask, setIsEdit}) => {
+
+    const onAddClick = () => {
+        setAddTask(true);
+        setIsEdit(false);
+    }
     
     return (
         <div>

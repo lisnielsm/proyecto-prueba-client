@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import AddTask from './addTask';
 import FullTask from './fullTask';
+import ListItem from './listItem';
 import ClienteAxios from '../config/axios';
 
 const TasksList = () => {
 
     const tasks = [
         {_id: 1, text: 'Esta es mi primera tarea'},
+        {_id: 1, text: 'Esta es mi segunda tarea'},
     ];
 
     const [ tasksList, setTasksList ] = useState([]); 
@@ -14,6 +16,7 @@ const TasksList = () => {
     const [ loading, setLoading ] = useState(true);
     const [ cancelbutton, setCancelButton ] = useState(false);
     const [ addbutton, setAddButton ] = useState(false);
+    const [ isedit, setIsEdit ] = useState(false);
 
 	useEffect(() => {
 		const getTasksList = async () => {
@@ -23,14 +26,16 @@ const TasksList = () => {
 				// setTasksList(resultado.data);
 
                 setTasksList(tasks);
-
+                
                 setLoading(false);
 			}
 			catch(error) {
-				console.log(error.response);
+                console.log(error.response);
 			}
 		};
 		getTasksList();
+
+        // eslint-disable-next-line
 	}, [])
 
     return ( 
@@ -38,12 +43,14 @@ const TasksList = () => {
 
 			{addTask ?
 				<FullTask 
+                    isedit={isedit}
                     setCancelButton={setCancelButton}
                     setAddButton={setAddButton}
                 />
 				:
 				<AddTask
 					setAddTask={setAddTask}
+                    setIsEdit={setIsEdit}
 				/>
 			}
 
@@ -51,8 +58,9 @@ const TasksList = () => {
                 <p>Cargando...</p> 
                 :
                 tasksList.map(task => (
-                    <FullTask
+                    <ListItem
                         key= {task._id}
+                        text={task.text}
                     />
                 ))
             }

@@ -7,7 +7,7 @@ import unlock from "../icons/unlock.svg";
 import sun from "../icons/sun.svg";
 import disc from "../icons/disc.svg";
 
-const FullTask = (setCancelButton, setAddButton) => {
+const FullTask = ({ isedit, setCancelButton, setAddButton }) => {
 
     const [disablecomponents, setDisableComponents] = useState(true);
 
@@ -19,19 +19,15 @@ const FullTask = (setCancelButton, setAddButton) => {
         }
     }
 
-    const onCancelButton = () => {
-        setCancelButton(true);
-    }
-
-    const onAddButton = () => {
-        setAddButton(true);
-    }
-
     return (
         <div style={{ margin: '10px', boxShadow: '4px 4px 6px #E5E8E8, -4px 4px 6px #E5E8E8' }}>
             <div className="flex-row" style={{ border: '1px solid #E5E8E8' }}>
                 <div style={{ paddingTop: '.375rem', paddingLeft: '.775rem' }}>
-                    <img src={addIcon} alt="Plus Icon" />
+                    { isedit ? 
+                        <div className="checkbox"></div>
+                        :
+                        <img src={addIcon} alt="Plus Icon" />
+                    }
                 </div>
                 <div className="col" style={{ marginRight: '7px' }}>
                     <textarea 
@@ -101,13 +97,13 @@ const FullTask = (setCancelButton, setAddButton) => {
                     type="button" 
                     className="btn cancel-btn"
                     disabled={disablecomponents}
-                    onClick={onCancelButton}
+                    onClick={() => setCancelButton(true)}
                 >Cancel</button>
                 <button 
                     type="button" 
                     className="btn btn-primary"
                     disabled={disablecomponents}
-                    onClick={onAddButton}
+                    onClick={() => setAddButton(true)}
                 >Add</button>
             </div>
         </div>
