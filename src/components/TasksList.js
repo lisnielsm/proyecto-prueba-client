@@ -7,14 +7,13 @@ const TasksList = () => {
 
     const tasks = [
         {_id: 1, text: 'Esta es mi primera tarea'},
-        {_id: 2, text: 'Esta es mi segunda tarea'},
-        {_id: 3, text: 'Esta es mi tercera tarea'},
-        {_id: 4, text: 'Esta es mi cuarta tarea'}
     ];
 
     const [ tasksList, setTasksList ] = useState([]); 
-    const [addTask, setAddTask] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [ addTask, setAddTask ] = useState(false);
+    const [ loading, setLoading ] = useState(true);
+    const [ cancelbutton, setCancelButton ] = useState(false);
+    const [ addbutton, setAddButton ] = useState(false);
 
 	useEffect(() => {
 		const getTasksList = async () => {
@@ -38,7 +37,10 @@ const TasksList = () => {
         <div className="container mt-3">
 
 			{addTask ?
-				<FullTask />
+				<FullTask 
+                    setCancelButton={setCancelButton}
+                    setAddButton={setAddButton}
+                />
 				:
 				<AddTask
 					setAddTask={setAddTask}
